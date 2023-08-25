@@ -223,6 +223,8 @@ def img_enlarge():
 
 
 def shearing_x_axis():
+     import cv2 as cv
+     import numpy as np
      img = cv.imread('Photos/park.jpg', 0)
      rows, cols = img.shape
      M = np.float32([[1,0.5,0], [0,1,0], [0,0,1]])
@@ -233,6 +235,8 @@ def shearing_x_axis():
 
 
 def shearing_y_axis():
+     import cv2 as cv
+     import numpy as np
      img = cv.imread('Photos/park.jpg', 0)
      rows, cols = img.shape
      M = np.float32([[1,0,0],[0.5,1,0],[0,0,1]])
