@@ -37,7 +37,7 @@ def RGB_img():
 def HSV_to_BGR():
    import cv2 as cv
    img = cv.imread('Photos/park.jpg')
-   hsv_bgr = cv.cvtColor(hsv, cv.COLOR_HSV2BGR)
+   hsv_bgr = cv.cvtColor('hsv', cv.COLOR_HSV2BGR)
    cv.imshow('HSV --> BGR', hsv_bgr)
 
 
@@ -134,7 +134,7 @@ def dilate():
 def erode():
   import cv2 as cv
   img = cv.imread('Photos/park.jpg')
-  eroded = cv.erode(dilated,(3,3),iterations=1)
+  eroded = cv.erode('dilated',(3,3),iterations=1)
   cv.imshow('Eroded',eroded)
 
 
@@ -414,7 +414,7 @@ def BGR_histogram_computation():
       plt.plot(hist, color=col)
       plt.xlim([0,256])
    plt.show()
-  cv.waitKey(0)
+   cv.waitKey(0)
 
 
 def simple_thresh():
@@ -482,6 +482,6 @@ def canny_edge_detection():
   import numpy as np
   img = cv.imread('Photos/cats.jpg')
   cv.imshow('Cats', img)
-  canny = cv.Canny(gray, 150, 175)
+  canny = cv.Canny('gray', 150, 175)
   cv.imshow('Canny',canny)
   cv.waitKey(0)
